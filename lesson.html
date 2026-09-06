@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weblessons</title>
+    <link rel="stylesheet" href="sections.css">
+    <link rel="stylesheet" href="normalize.css">
+</head>
+<body>
+    <video autoplay muted loop playsinline oncanplay="this.playbackRate = 0.60;" id="bg-video">
+        <source src="./background/bg.mp4" type="video/mp4">
+    </video>
+    <script type="module" src="./sections.js" ></script>
+    <script type="module" src="./bringdata.js" ></script>
+    <div id="curtain"></div>
+    <div class="header">
+        <div class="hcontent">
+            <a href="./lesson.html?subject=html" class = "hcj" ><img src="./vproject/html1.png"></a>
+            <a href="./lesson.html?subject=css" class = "hcj" ><img src="./vproject/css1.png"></a>
+            <a href="./lesson.html?subject=js" class = "hcj" ><img src="./vproject/js1.png"></a>
+            <a href="./lesson.html?subject=star" class = "hcj" ><img src="./vproject/bookmark1.png"></a>
+            <a href="./index.html" class ="hcj"><img src="./vproject/home1.png"></a>
+            <a href="./photoes.html" class="hcj"><img src="./vproject/customer1.png"></a>
+        </div>
+    </div>
+    <div id="whatnext">
+        <button id="prev" class="whatnext">Prev</button>
+        <button id="pres" class="whatnext"></button>
+        <button id="next" class="whatnext">Next</button>
+    </div>
+    <div class="sidebar">
+        <ul id="listlinks">
+            <!-- here the data-list come to from data js by bring data js -->
+        </ul>
+    </div>
+    <!-- lessons -->
+    <div id="content">
+        <img src="./vproject/star2.png" id="photo"> 
+        <div id="head"></div>
+        <div id="lesson"></div>
+        <div id="code"></div>
+    </div>
+</body>
+</html>

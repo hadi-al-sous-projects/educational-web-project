@@ -1,0 +1,49 @@
+/* the module and contents position */
+body{
+    margin: 0;
+    padding: 0;
+}
+spline-viewer,
+.headline{
+    position: fixed;
+    z-index: 5;
+}
+.headline#html{
+    top: 10%;
+    left: 10%;
+}
+.headline#js{
+    top: 10%;
+    right: 10%;
+}
+.headline#css{        
+    top: 55%;
+    left: 10%;
+}
+.headline#photo{
+    top: 55%;
+    right: 10%;
+}
+.headline#p{
+    top: 1%;
+}
+.headline a{
+    cursor: pointer;
+}
+.headline img {
+    transition: transform 0.3s ease;
+    filter: invert(1) ;
+}
+
+.headline img:hover {
+    transform: translateY(2px);
+    border-color: black;
+    box-shadow: 0 0 18px 6px black;
+    border-radius: 20%;
+}
+
+.headline a img.last-visited {
+    border-color: black;
+    box-shadow: 0 0 18px 6px black;
+    border-radius: 20%;
+}

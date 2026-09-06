@@ -1,0 +1,277 @@
+/* root variables */
+:root {
+    --accent:       #e8c547;
+    --shadow:  rgba(232, 197, 71, 0.08);
+    --text:         #ededed;
+    --text2:     #d4cfc8;
+    --background:      rgba(0, 0, 0, 0.48); /* ~50% شفافية موحدة */
+    --border:       rgba(255, 255, 255, 0.08);
+    --border2:   rgba(255, 255, 255, 0.13);
+    --radius-sm:    8px;
+    --radius-md:    12px;
+}
+@font-face {
+    font-family: "bossfont";
+    src: url('./vproject/Marhey-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: "bossfont2";
+    src: url("./vproject/LemonBrushArabicPersonalUseOnly-Regular.otf");
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    min-height: 94vh;
+}
+
+#curtain {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 999;
+    transition: none;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -5;
+    filter: contrast(230%) brightness(0.58);
+}
+/* body */
+body {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 120px 1fr;
+    grid-template-areas:
+        "header sidebar"
+        "header content";
+    height: 94vh;
+    font-family: "bossfont", system-ui, sans-serif;
+    color: var(--text);
+    direction: rtl; /*the direction of the elements and the grid of the page*/
+}
+/* header */
+.header {
+    grid-area: header;
+    background: var(--background);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--border);
+    height: fit-content;
+}
+
+.header .hcontent {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 10px;
+    margin-top: 120px;
+}
+
+.header .hcontent .hcj {
+    width: 80%;
+    border-radius: 14px;
+    background: linear-gradient(135deg,
+        rgba(232, 197, 71, 0.88),
+        rgb(217, 217, 210));
+    box-shadow:
+        0 0 0 1px rgba(232, 197, 71, 0.20),
+        0 8px 24px rgba(0, 0, 0, 0.40);
+    transition: transform 0.22s ease-out;
+}
+.header .hcontent .hcj:hover {
+    transform: translateY(-3px) scale(1.04);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    font-size: 90%;
+    width: 100%;
+    height: 120px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: var(--background);
+    backdrop-filter: blur(12px);
+    padding: 0 16px;
+    scrollbar-color: white var(--accent);
+    scrollbar-width:var(--radius-sm);
+
+}
+
+
+.sidebar #listlinks {
+    list-style: none;
+    direction: rtl;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: center;
+    height: 100%;
+    width: max-content;
+    padding: 0 2px;
+    overflow-x: auto;
+}
+
+.sidebar #listlinks li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    color: #6b6b6b;
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+}
+.sidebar #listlinks li:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--border2);
+    color: var(--text);
+    transform: translateY(-2px);
+}
+.sidebar #listlinks li.active {
+    background: rgba(232, 197, 71, 0.13);
+    border-color: var(--border);
+    color: var(--accent);
+    box-shadow: 0 0 12px var(--shadow);
+}
+
+#content {
+    grid-area: content;
+    width: 100%;
+    height: 100%;
+    direction: rtl;
+    background: var(--background);
+    backdrop-filter: blur(12px);
+    border-right: 1px solid var(--border);
+    padding: 0px 32px 90px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+}
+
+
+#content #head {
+    width: 100%;
+    text-align: center;
+    color: var(--accent);
+    font-size: 2.2rem;
+    font-family: "bossfont2";
+    letter-spacing: 0.01em;
+    margin-bottom: 28px;
+    text-shadow: 0 0 32px var(--shadow);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+#content #lesson {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto 28px;
+    color: var(--text2);
+    text-align: right;
+    direction: rtl;
+    line-height: 2.0;
+    font-size: 1rem;
+
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 22px 26px;
+}
+
+#content #code {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    direction: ltr;
+    text-align: left;
+    font-family: monospace,"bossfont2";
+    font-size: 0.88rem;
+    line-height: 1.75;
+    background: rgba(20, 20, 20, 0.50);
+    color: #d4d4d4;
+    padding: 22px 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border2);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 16px 40px rgba(0, 0, 0, 0.28);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.10) transparent;
+}
+#content #photo {
+    filter: invert(100%);
+    cursor: pointer;
+    position: sticky;
+    z-index: 999;
+    top: 0%;
+}
+
+#content #photo:hover{
+    transform: translateY(2px);
+    filter: invert(50%);
+}
+
+#whatnext {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    direction: rtl;
+    background: rgba(0, 0, 0, 0.52);
+    border-top: 1px solid var(--border);
+    padding: 12px 24px;
+    z-index: 99;
+}
+
+#whatnext button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 34px;
+    padding: 0 16px;
+    border-radius: var(--radius-sm);
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    font-family: "bossfont", sans-serif;
+    font-size: 0.84rem;
+    cursor: pointer;
+    transition: background 0.16s, border-color 0.16s, color 0.16s, transform 0.16s;
+    white-space: nowrap;
+}
+#whatnext button:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: var(--border);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
