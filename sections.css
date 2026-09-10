@@ -27,6 +27,7 @@
 
 html, body {
     min-height: 94vh;
+    zoom: 1.25;
 }
 
 #curtain {
