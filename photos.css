@@ -1,3 +1,6 @@
+body{
+    zoom: 500%;
+}
 .psize{
     max-width: 300px;
     max-height: 300px;

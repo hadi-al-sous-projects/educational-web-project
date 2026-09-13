@@ -1,52 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HM WEB</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <script type="module" src="./background/spline-viewer.js"></script>
-    <spline-viewer url="./background/cyber_mannequin.spline" style="display:block;width:100%;height:100%;"></spline-viewer>
+    <spline-viewer
+      url="./background/cyber_mannequin.spline"
+      style="display: block; width: 100%; height: 100%"
+    ></spline-viewer>
     <!-- the icons links -->
     <div class="headline" id="html">
-        <a href="./lesson.html?subject=html">
-            <img src="./vproject/html3.png" class="photolink">
-        </a>
+      <a href="./lesson.html?subject=html">
+        <img src="./vproject/html3.png" class="photolink" />
+      </a>
     </div>
     <div class="headline" id="css">
-        <a href="./lesson.html?subject=css">
-            <img src="./vproject/css3.png" class="photolink">
-        </a>
+      <a href="./lesson.html?subject=css">
+        <img src="./vproject/css3.png" class="photolink" />
+      </a>
     </div>
     <div class="headline" id="js">
-        <a href="./lesson.html?subject=js">
-            <img src="./vproject/js3.png" class="photolink" >
-        </a>
+      <a href="./lesson.html?subject=js">
+        <img src="./vproject/js3.png" class="photolink" />
+      </a>
     </div>
     <div class="headline" id="photo">
-        <a href="./lesson.html?subject=star">
-            <img src="./vproject/bookmark2.png" class="photolink" >
-        </a>
+      <a href="./lesson.html?subject=star">
+        <img src="./vproject/bookmark2.png" class="photolink" />
+      </a>
     </div>
-        <div class="headline" id="p">
-        <a href="./photoes.html">
-            <img src="./vproject/customer1.png" class="photolink" >
-        </a>
+    <div class="headline" id="p">
+      <a href="./photos.html">
+        <img src="./vproject/customer1.png" class="photolink" />
+      </a>
     </div>
     <!-- end of links -->
 
     <!-- تمييز آخر صفحة (subject) فتحها المستخدم بإطار أبيض مميز -->
     <script>
-        const lastSubject = localStorage.getItem("lastSubject");
-        // ربط قيمة lastSubject (html/css/js/star) بمعرف الـ div المطابق له بالصفحة
-        const idMap = { html: "html", css: "css", js: "js", star: "photo" };
-        const targetId = idMap[lastSubject];
-        if (targetId) {
-            const img = document.querySelector(`#${targetId} img`);
-            if (img) img.classList.add("last-visited");
-        }
+      const lastSubject = localStorage.getItem("lastSubject");
+      // ربط قيمة lastSubject (html/css/js/star) بمعرف الـ div المطابق له بالصفحة
+      const idMap = { html: "html", css: "css", js: "js", star: "photo" };
+      const targetId = idMap[lastSubject];
+      if (targetId) {
+        const img = document.querySelector(`#${targetId} img`);
+        if (img) img.classList.add("last-visited");
+      }
     </script>
-</body>
+  </body>
 </html>
